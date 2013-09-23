@@ -105,24 +105,24 @@ last_wikis = list(cursor)
             <div class="list-group-item"><h4 class="list-group-item-heading">Actions</h4></div>
             <a href="${href.newticket()}?type=task" class="list-group-item">Add task</a>
             <a href="${href.newticket()}?type=bug" class="list-group-item">Add bug</a>
+          </div>
+          <div class="list-group">
             <div class="list-group-item"><h4 class="list-group-item-heading">Tickets</h4></div>
-            <div py:for="report in all_reports">
-              <a href="${href.report(report[0])}" class="list-group-item">${report[1]}</a>
-            </div>
+            <a py:for="report in all_reports" href="${href.report(report[0])}" class="list-group-item">${report[1]}</a>
+          </div>
+          <div class="list-group">
             <div class="list-group-item"><h4 class="list-group-item-heading">Last modified pages</h4></div>
             <a href="${href.wiki('TitleIndex')}" class="list-group-item">Title Index</a>
-            <div py:for="wiki_page in last_wikis">
-              <a href="${href.wiki(wiki_page[0])}" class="list-group-item">
-                  <py:if test="len(wiki_page[0]) &lt; TRIM_SIZE + 1">
-                    ${wiki_page[0]}
-                  </py:if>
-                  <py:if test="len(wiki_page[0]) &gt; TRIM_SIZE">
-                    <py:with vars="short_name=wiki_page[0][-22:]">
-                      ...${short_name}
-                    </py:with>
-                  </py:if>
-              </a>
-            </div>
+            <a py:for="wiki_page in last_wikis" href="${href.wiki(wiki_page[0])}" class="list-group-item">
+              <py:if test="len(wiki_page[0]) &lt; TRIM_SIZE + 1">
+                ${wiki_page[0]}
+              </py:if>
+              <py:if test="len(wiki_page[0]) &gt; TRIM_SIZE">
+                <py:with vars="short_name=wiki_page[0][-22:]">
+                  ...${short_name}
+                </py:with>
+              </py:if>
+            </a>
           </div>
 
         </div>
