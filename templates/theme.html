@@ -167,15 +167,19 @@ last_wikis = list(cursor)
       </div>
     </div>
 
-    <div id="footer" xml:lang="en"><hr/>
-      <a id="tracpowered" href="http://trac.edgewall.org/"><img
-        src="${chrome.htdocs_location}trac_logo_mini.png" height="30"
-        width="107" alt="Trac Powered" class="pull-left" /></a>
-      <p class="pull-left" i18n:msg="version">
-        Powered by <a href="${href.about()}"><strong>Trac ${trac.version}</strong></a><br />
-        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
-      </p>
-      <p class="pull-right">${chrome.footer}</p>
+    <div id="footer" class="container" xml:lang="en"><hr/>
+      <div class="row">
+        <div class="col-md-12">
+          <a id="tracpowered" href="http://trac.edgewall.org/"><img
+            src="${chrome.htdocs_location}trac_logo_mini.png" height="30"
+            width="107" alt="Trac Powered" class="pull-left" /></a>
+          <p class="pull-left" i18n:msg="version">
+            Powered by <a href="${href.about()}"><strong>Trac ${trac.version}</strong></a><br />
+            By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+          </p>
+          <p class="pull-right">${chrome.footer}</p>
+        </div>
+      </div>
     </div>
 
     <!-- Put script at the end for faster loading. -->
