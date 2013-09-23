@@ -98,9 +98,9 @@ last_wikis = list(cursor)
       </div>
     </div>
 
-    <div id="main" class="container-fluid">
-      <div class="row-fluid">
-        <div class="span${SIDEBAR_SPAN}">
+    <div id="main" class="container">
+      <div class="row">
+        <div class="col-md-${SIDEBAR_SPAN}">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Actions</li>
@@ -131,7 +131,7 @@ last_wikis = list(cursor)
           </div>
 
         </div>
-        <div class="span${CONTENT_SPAN}">
+        <div class="col-md-${CONTENT_SPAN}">
 
           <xi:include py:if="value_of('resourcepath_template')" href="${resourcepath_template}" />
 
