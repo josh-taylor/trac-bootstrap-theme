@@ -11,20 +11,16 @@ textarea {
     padding: 9px 0;
 }
 
+.nav ul {
+    text-align: left;
+}
+
 .nav li {
     border-right: 0;
     display: list-item;
     padding: 0;
     white-space: normal;
-}
-
-.navbar .nav > li > a {
-    color: #FFFFFF;
-}
-
-.navbar .nav .active > a, .navbar .nav .active > a:hover {
-    color: #333333;
-    background-color: #CCCCCC;
+    font-size: 14px;
 }
 
 table.progress td {
@@ -40,7 +36,8 @@ table.progress td {
 
 #search {
     clear: none;
-    margin: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 #search input {
