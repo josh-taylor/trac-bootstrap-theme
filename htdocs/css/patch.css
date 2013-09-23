@@ -34,6 +34,10 @@ table.progress td {
     border-bottom-width: 0px;
 }
 
+:link:hover {
+    background: none;
+}
+
 #search {
     clear: none;
     margin-top: 8px;
