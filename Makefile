@@ -15,27 +15,20 @@ run:
 deps: clean
 	virtualenv ${BUILD_FOLDER}
 	@echo "Installing trac will take a while..."
-	${BUILD_FOLDER}/bin/pip install trac==0.12.5
+	${BUILD_FOLDER}/bin/pip install trac==1.0
 	${BUILD_FOLDER}/bin/trac-admin ${BUILD_PROJECT} \
 		initenv Test-Project sqlite:db/trac.db
 	htpasswd -b -c  ${BUILD_FOLDER}/htpasswd username password
 	mkdir -p ${BUILD_PROJECT}/htdocs/css
 	mkdir -p ${BUILD_PROJECT}/htdocs/js
-	mkdir -p ${BUILD_PROJECT}/htdocs/img
 	wget -q \
-    	http://twitter.github.com/bootstrap/assets/css/bootstrap.css\
+    	http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css\
     	-O ${BUILD_PROJECT}/htdocs/css/bootstrap.css
 	wget -q \
-    	http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css\
-    -O ${BUILD_PROJECT}/htdocs/css/bootstrap-responsive.css
-	wget -q \
-    	http://twitter.github.com/bootstrap/assets/img/glyphicons-halflings.png\
-    	-O ${BUILD_PROJECT}/htdocs/img/glyphicons-halflings.png
-	wget -q \
-    	http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js\
+	http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js\
     	-O ${BUILD_PROJECT}/htdocs/js/jquery.min.js
 	wget -q \
-    	http://twitter.github.com/bootstrap/assets/js/bootstrap.min.js\
+	http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js\
     	-O ${BUILD_PROJECT}/htdocs/js/bootstrap.min.js
 
 clean:
