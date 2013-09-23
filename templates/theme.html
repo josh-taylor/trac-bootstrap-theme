@@ -15,7 +15,7 @@ else:
 new_ctxtnav = []
 for element in chrome['ctxtnav']:
   if hasattr(element, 'attrib'):
-    element.attrib = element.attrib | [(QName('class'), 'btn')]
+    element.attrib = element.attrib | [(QName('class'), 'btn btn-default')]
   else:
     element = tag.a(element,  class_='btn disabled')
   new_ctxtnav.append(element)
@@ -133,10 +133,10 @@ last_wikis = list(cursor)
             </div>
             <div class="col-md-6">
               <div id="ctxtnav" class="btn-group pull-right" py:if="chrome.ctxtnav">
-                      <a py:if="req.environ['PATH_INFO'].startswith('/wiki')" class="btn" href="${req.href(req.path_info)}?action=edit">
-                        Edit page
-                      </a>
-                    <py:for each="i, elm in enumerate(chrome.ctxtnav)" class="btn">$elm</py:for>
+                <a py:if="req.environ['PATH_INFO'].startswith('/wiki')" class="btn btn-default" href="${req.href(req.path_info)}?action=edit">
+                  Edit page
+                </a>
+                <py:for each="i, elm in enumerate(chrome.ctxtnav)" class="btn btn-default">$elm</py:for>
               </div>
             </div>
           </div>

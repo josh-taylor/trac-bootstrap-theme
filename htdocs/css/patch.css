@@ -31,7 +31,7 @@ table.progress td {
 :visited {
     text-decoration: none;
     color: #08C;
-    border-bottom: 0px;
+    border-bottom-width: 0px;
 }
 
 #search {
@@ -63,4 +63,12 @@ form input {
 
 ul.breadcrumb {
   float: left;
+}
+
+.btn-group a {
+    border-bottom-width: 1px;
+}
+
+#ctxtnav {
+    padding: 0;
 }
