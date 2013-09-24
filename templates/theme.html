@@ -58,43 +58,45 @@ last_wikis = list(cursor)
   <py:match path="body" once="true" buffer="false">
     <body>
     <div class="navbar navbar-default navbar-inverse navbar-fixed-top">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="${req.base_url}">${project.name}</a>
-      </div>
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="${req.base_url}">${project.name}</a>
+        </div>
 
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="icon-user"></i> ${user_menu_text} <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu" py:if="chrome.nav['metanav']">
-              <li py:for="idx, item in  enumerate(chrome.nav['metanav'])"
-                  class="${classes(first_last(idx, chrome.nav['metanav']), active=item.active)}">
-                  ${item.label}
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-user"></i> ${user_menu_text} <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" py:if="chrome.nav['metanav']">
+                <li py:for="idx, item in  enumerate(chrome.nav['metanav'])"
+                    class="${classes(first_last(idx, chrome.nav['metanav']), active=item.active)}">
+                    ${item.label}
+                </li>
+              </ul>
+            </li>
+          </ul>
 
-        <ul class="nav navbar-nav navbar-left" py:if="chrome.nav['mainnav']">
-          <li py:for="idx, item in enumerate(chrome.nav['mainnav'])"
-              class="${classes(first_last(idx, chrome.nav['mainnav']), active=item.active)}">${item.label}</li>
-        </ul>
+          <ul class="nav navbar-nav navbar-left" py:if="chrome.nav['mainnav']">
+            <li py:for="idx, item in enumerate(chrome.nav['mainnav'])"
+                class="${classes(first_last(idx, chrome.nav['mainnav']), active=item.active)}">${item.label}</li>
+          </ul>
 
-        <form id="search" class="navbar-form navbar-right" action="${href.search()}" method="get" role="search">
-          <py:if test="not defined('trac_error_rendering') and 'SEARCH_VIEW' in perm">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Quick search" id="proj-search" name="q" size="18" accesskey="f" value=""/>
-            </div>
-          </py:if>
-        </form>
+          <form id="search" class="navbar-form navbar-right" action="${href.search()}" method="get" role="search">
+            <py:if test="not defined('trac_error_rendering') and 'SEARCH_VIEW' in perm">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Quick search" id="proj-search" name="q" size="18" accesskey="f" value=""/>
+              </div>
+            </py:if>
+          </form>
+        </div>
       </div>
     </div>
 
