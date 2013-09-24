@@ -76,3 +76,9 @@ ul.breadcrumb {
 #ctxtnav {
     padding: 0;
 }
+
+.trac-progress .progress {
+    margin-bottom: 20px;
+    width: auto;
+    max-width: 100%;
+}
