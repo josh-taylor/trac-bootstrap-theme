@@ -86,3 +86,24 @@ ul.breadcrumb {
 .report .report-arguments {
     margin-top: 20px;
 }
+
+#content.ticket {
+    width: auto;
+    padding-top: 20px;
+}
+
+.badge :link, .badge :visited {
+    color: #fff;
+}
+
+.badge :link:hover {
+    text-decoration: none;
+}
+
+.ticket h1.searchable {
+    margin-bottom: 20px;
+}
+
+.ticket .attributes {
+    margin-top: 20px;
+}
