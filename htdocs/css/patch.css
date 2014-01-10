@@ -82,3 +82,7 @@ ul.breadcrumb {
     width: auto;
     max-width: 100%;
 }
+
+.report .report-arguments {
+    margin-top: 20px;
+}
