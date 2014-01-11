@@ -91,6 +91,16 @@ Arguments:
         </tr>
     </table>
     <div class="description">
+        <!--! Quote the description (only for existing tickets) -->
+        <form py:if="ticket.exists and ticket.description and can_append" method="get" action="#comment">
+            <div class="pull-right">
+                <input type="hidden" name="replyto" value="description" />
+                <button type="submit" name="reply" title="Reply, quoting this description" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-edit"></span> Reply
+                </button>
+            </div>
+        </form>
+
         <h3 id="comment:description">
             Description
             <a href="${href.ticket(ticket.id, action='diff', version=description_change.cnum)}"
@@ -99,14 +109,6 @@ Arguments:
             </a>
         </h3>
 
-        <!--! Quote the description (only for existing tickets) -->
-        <form py:if="ticket.exists and ticket.description and can_append"
-              id="addreply" method="get" action="#comment">
-            <div class="inlinebuttons">
-                <input type="hidden" name="replyto" value="description" />
-                <input type="submit" name="reply" value="${captioned_button('↳', _('Reply'))}" title="Reply, quoting this description" />
-            </div>
-        </form>
         <div py:if="ticket.description" class="searchable" xml:space="preserve">
       ${wiki_to_html(context, ticket.description, escape_newlines=preserve_newlines)}
     </div>
