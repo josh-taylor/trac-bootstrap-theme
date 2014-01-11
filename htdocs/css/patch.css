@@ -89,7 +89,6 @@ ul.breadcrumb {
 
 #content.ticket {
     width: auto;
-    padding-top: 20px;
 }
 
 .badge :link, .badge :visited {
@@ -106,4 +105,8 @@ ul.breadcrumb {
 
 .ticket .attributes {
     margin-top: 20px;
+}
+
+.collapsed > .foldable :link {
+    background: none;
 }
