@@ -24,10 +24,10 @@ To start Trac for testing:
 
 Default username and password is: username/password.
 
-# Bootstrap 3
+## Bootstrap 3
 This theme is currently being converted to use bootstrap 3.0 and be a full theme.
 Checkout the `bootstrap-3.0` branch to view progress.
 
-# Credits
+## Credits
 
 Based on [Chevah's Trac Bootstrap Theme](https://github.com/chevah/trac-bootstrap-theme)
